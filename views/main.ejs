@@ -1,0 +1,21 @@
+<%- include templates/header %>
+<%- include templates/searchbar%>
+<%  if(numOfPages>1){%>
+    <%- include templates/paging %>
+    <h3> page number <%=currentPage%></h3>
+<% } %>
+<% if(searchPhrase){%>
+    <h2>you are now searching <%=searchPhrase%></h2>
+    <% } %>
+    <% if (files.length>0){%>
+        <h2> here are your photos:</h2>
+    <%}else{%>
+        <h2> no images to show here</h2>
+    <% } %>
+  
+   
+  
+<%-include templates/photos %>
+
+
+<%include templates/footer %>

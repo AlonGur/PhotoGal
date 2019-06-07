@@ -1,0 +1,29 @@
+
+
+<% var errors = errors || {} %>
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+  </head>
+  <body>
+
+<nav>
+
+    <li>LOGOUT</li>
+
+
+        <li> <a href='/'>home</a></li>
+    <li> <a href='/upload'>upload</a></li>
+    <li> <a href='/login'>login</a></li>
+    <li> <a href='/register'>register</a></li>
+    <li> the last time you were here was <%= lastEntry %></li>
+   
+</nav>
+<br>

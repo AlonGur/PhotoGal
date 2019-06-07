@@ -1,0 +1,103 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+li {
+  float: left;
+}
+
+nav {
+  display: block;
+}
+
+form {
+  display: block;
+}
+
+
+
+
+.picsWrapper{
+  display:flex;
+  flex-wrap: wrap;
+  margin:20px;
+
+}
+
+
+.galleryItem{
+  margin: 20px;
+  /* flex-basis: 25%; */
+  width: 250px;
+  overflow: hidden;
+  border: 3px solid grey;
+  border-radius:5%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.imgWrapper{
+  border-radius:5%;
+  border:1px solid grey;
+  margin:auto;
+  overflow: hidden;
+
+}
+.imgWrapper img{
+  /* width: 100%; */
+  margin-left:auto;
+  margin-right:auto;
+
+  display: block;
+
+}
+
+
+.hide{
+  display:none;
+}
+
+.selected{
+  background-color: yellowgreen;
+}
+
+.infoWrapper{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:5px;
+}
+.infoWrapper a{
+  font-size: 1.5rem;
+}
+
+
+.med, .small{
+  display:none
+}
+
+.gallery{
+  display:flex;
+}
+.paging{
+  font-size:2rem;
+  text-decoration: none;
+}
+
+
+@media (max-width: 650px){
+  .large, .small{
+    display:none
+  }
+  .med{
+    display:block
+  }
+}

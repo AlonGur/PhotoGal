@@ -1,0 +1,28 @@
+<%- include templates/header %>
+<%- include templates/searchbar%>
+<%- include templates/sizeSelector%>
+
+<% if(searchPhrase){%>
+    <h2>you are now searching <%=searchPhrase%></h2>
+    <% } %>
+    <% if (files.length>0){%>
+        <h2> here are your photos:</h2>
+    <%}else{%>
+        <h2> no images to show here</h2>
+    <% } %>
+  
+<div class="gallery">
+
+
+ <% if(includePrev){ %>
+    <%- include templates/previous %>
+ <% } %>  
+
+<%- include templates/photos %>
+
+<% if( !(files.length < picsPerPage )) {%>
+    <%- include templates/next %>
+ <% } %>  
+</div>
+
+<%include templates/footer %>

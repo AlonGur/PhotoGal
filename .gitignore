@@ -1,0 +1,6 @@
+.history/*
+data/*
+node_modules/*
+.sass-cache/*
+photos/node_modules/*
+photos/uploads/*

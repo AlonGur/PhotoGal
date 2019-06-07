@@ -1,0 +1,16 @@
+<div class='picsWrapper'>
+    <% files.forEach(function(val,ind,arr){ %>
+        <div data-id="<%=val._id%>" class='galleryItem' onclick="myfunction(event)">  
+        <div class='imgWrapper'>
+            <a href="/<%=val.id%>/originalSize">
+        <img class="large" src='/images/resized/<%=size%>/<%= val.name%>' >
+        </a>
+    </div>
+          <div class="infoWrapper">
+          <span><b>name:</b> <%= val.name%></span>
+          <a class="fas fa-file-download" href="/<%=val.id%>/download">  
+        </a>
+        </div>
+    </div>
+ <%   })  %>
+</div>
