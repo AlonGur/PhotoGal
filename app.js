@@ -16,6 +16,8 @@ var registerRouter=require('./routes/register')
 var loginRouter=require('./routes/login')
 var uploadRouter=require('./routes/upload')
 
+
+
 var app = express();
 
 require('./config/passport')(passport);

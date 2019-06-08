@@ -3,12 +3,12 @@
         <div data-id="<%=val._id%>" class='galleryItem' onclick="myfunction(event)">  
         <div class='imgWrapper'>
             <a href="/<%=val.id%>/originalSize">
-        <img class="large" src='/images/resized/<%=size%>/<%= val.name%>' >
+        <img  class="large mainImg" data-toggle="tooltip" title="click to view full size" src='/images/resized/<%=size%>/<%= val.name%>' >
         </a>
     </div>
           <div class="infoWrapper">
-          <span><b>name:</b> <%= val.name%></span>
-          <a class="fas fa-file-download" href="/<%=val.id%>/download">  
+          <span> <%= val.name%></span>
+          <a data-toggle="tooltip" title="click to download" class="fas fa-file-download" href="/<%=val.id%>/download">  
         </a>
         </div>
     </div>

@@ -3,13 +3,11 @@
 <%- include templates/sizeSelector%>
 
 <% if(searchPhrase){%>
-    <h2>you are now searching <%=searchPhrase%></h2>
+    <h2>search results for "<%=searchPhrase%>"</h2>
     <% } %>
-    <% if (files.length>0){%>
-        <h2> here are your photos:</h2>
-    <%}else{%>
+    <% if (files.length===0){%>
         <h2> no images to show here</h2>
-    <% } %>
+  <% } %>
   
 <div class="gallery">
 
