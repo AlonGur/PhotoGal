@@ -3,24 +3,25 @@
 <%- include templates/sizeSelector%>
 
 <% if(searchPhrase){%>
-    <h2>search results for "<%=searchPhrase%>"</h2>
+    <div class="userMsg">Showing search results for: "<%=searchPhrase%>"</div>
     <% } %>
     <% if (files.length===0){%>
-        <h2> no images to show here</h2>
+        <div class="userMsg"> No images found...</div>
   <% } %>
   
 <div class="gallery">
+    <%- include templates/photos %>
+</div>
 
-
- <% if(includePrev){ %>
+<div class="paging">
+<% if(includePrev){ %>
     <%- include templates/previous %>
  <% } %>  
-
-<%- include templates/photos %>
 
 <% if( !(files.length < picsPerPage )) {%>
     <%- include templates/next %>
  <% } %>  
 </div>
+
 
 <%include templates/footer %>

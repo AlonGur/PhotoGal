@@ -50,7 +50,7 @@ app.use(function(req, res, next) {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.set('picsPerPage', 9)
+app.set('picsPerPage', 8)
 app.locals.picsPerPage=app.get('picsPerPage')
 
 app.use(logger('dev'));

@@ -1,16 +1,26 @@
-<div class='picsWrapper'>
+<div class='picsWrapper row'>
     <% files.forEach(function(val,ind,arr){ %>
-        <div data-id="<%=val._id%>" class='galleryItem' onclick="myfunction(event)">  
+        <div class= "galleryItemWrapper col-3">
+        <div data-id="<%=val._id%>" class='galleryItem ' onclick="myfunction(event)">  
         <div class='imgWrapper'>
             <a href="/<%=val.id%>/originalSize">
         <img  class="large mainImg" data-toggle="tooltip" title="click to view full size" src='/images/resized/<%=size%>/<%= val.name%>' >
         </a>
     </div>
           <div class="infoWrapper">
-          <span> <%= val.name%></span>
-          <a data-toggle="tooltip" title="click to download" class="fas fa-file-download" href="/<%=val.id%>/download">  
+          <span class="photoName" data-toggle="tooltip" title="<%=val.name%>">
+            <%  if(val.name.length<20){ %>
+               <%= val.name%>
+               <% }else {%>
+                <%= val.name.substring(0, 25) %>
+                ...
+                <% } %>
+            </span>
+          <a data-toggle="tooltip" title="click to download"  href="/<%=val.id%>/download">  
+            <i class="fas fa-file-download"></i>
         </a>
         </div>
     </div>
+</div>
  <%   })  %>
 </div>

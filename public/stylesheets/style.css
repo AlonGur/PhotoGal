@@ -1,47 +1,66 @@
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #f2f2f2;
+  overflow: hidden;
 }
 
-li {
+/* Style the links inside the navigation bar */
+.topnav a {
   float: left;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-nav {
-  display: block;
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: rgb(90, 173, 206);
+  color: white;
+}
+.topnav a:last-child{
+  float: right;
+}
+
+a{
+  color:rgb(167, 162, 162);
+}
 form {
   display: block;
 }
-
-
-
-
-.picsWrapper{
-  display:flex;
-  flex-wrap: wrap;
-  margin:20px;
-
+.userMsg{
+  padding:5px 0 ;
 }
 
+.picsWrapper{
+  padding: 30px;
+}
+
+.galleryItemWrapper{
+  padding: 5px 20px;
+}
 
 .galleryItem{
-  margin: 20px;
-  /* flex-basis: 25%; */
-  width: 250px;
-  overflow: hidden;
-  border: 3px solid grey;
-  border-radius:5%;
-  padding: 5px;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  border: #f2f2f2 solid 1px;
   padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+
 }
 
 .imgWrapper{
@@ -61,6 +80,9 @@ form {
 
 }
 
+.photoName{
+  overflow: hidden;
+}
 
 
 .hide{
@@ -82,19 +104,16 @@ form {
 }
 
 
-.med, .small{
-  display:none
-}
 
-.gallery{
-  display:flex;
-}
 .paging{
   font-size:2rem;
-  text-decoration: none;
+  padding: 0px 30px;
+
 }
 
-
+.right{
+  float:right;
+}
 @media (max-width: 650px){
   .large, .small{
     display:none
