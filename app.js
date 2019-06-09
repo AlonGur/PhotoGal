@@ -11,11 +11,9 @@ var model=require('./myDB/photos');
 
 var indexRouter = require('./routes/index');
 var photosRouter = require ('./routes/photos');
-
 var registerRouter=require('./routes/register')
 var loginRouter=require('./routes/login')
 var uploadRouter=require('./routes/upload')
-
 
 
 var app = express();
@@ -79,15 +77,13 @@ app.use(function (req,res,next){
 })
 
 
-
-
-
+//MW for search form submission
 app.post('/search/:size', function (req,res,next){
   res.redirect(`/photos/${req.params.size}/1/${req.body.searchBox}`)
 })
 
-
-  app.get('/:picId/originalSize', 
+//full pic display route
+app.get('/:picId/originalSize', 
       function (req,res,next){
         model.findById( `${req.params.picId}`, function (err,file){
           if(err){
@@ -100,7 +96,8 @@ app.post('/search/:size', function (req,res,next){
     }
 )
 
-  app.use('/:picId/download',
+//downlaod route
+app.use('/:picId/download',
   function(req,res,next){
     model.findById( `${req.params.picId}`, function (err,file){
       if(err){
@@ -115,7 +112,6 @@ app.post('/search/:size', function (req,res,next){
 
 app.use('/', indexRouter);
 app.use('/photos', photosRouter)
-
 app.use('/upload', uploadRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);

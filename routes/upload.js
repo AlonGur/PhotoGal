@@ -4,7 +4,6 @@ var fs = require('fs');
 var path = require('path')
 var multer = require('multer')
 var upload = multer({ dest: 'uploads/' })
-var mongoose = require('mongoose')
 var model = require('../myDB/photos')
 var resize = require('../myModules/resize')
 
@@ -16,7 +15,6 @@ router.get('/', function (req, res, next) {
 
 router.post('/', upload.array('pic'), function (req, res, next) {
     var appRoot = process.env.PWD;
-   // console.log(req.files)
     req.files.forEach(function (pic) {
         model.create({
             name: pic.originalname,
@@ -28,16 +26,11 @@ router.post('/', upload.array('pic'), function (req, res, next) {
                 if (err) {
                     next(err)
                 }
-                else {
-                   // console.log(mySizes)
-                    
+                else {                    
                     resize(pic.originalname)
                 }
             })
-
-
     })
-
 
     res.redirect('/')
 })

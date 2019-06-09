@@ -5,13 +5,11 @@ var model=require('../myDB/photos');
 
 var app = express();
 
+//redirect default to medium size pics
 router.get('/', function(req,res,next){
   res.redirect('/photos/med/1')
 })
-// router.get('/:size/:page',function(req,res,next){
-//  // res.send(`yessss, ${req.params.size},${req.params.page}`);
 
-// })
 router.get('/:size/:page', renderPage())
 router.get('/:size/:page/:searchQuery',renderPage())
 
@@ -34,13 +32,11 @@ function renderPage(){
       else{
 
         if(req.params.page==='1'){
-          console.log(typeof req.params.page)
           res.locals.includePrev=false
         }
         else{
           res.locals.includePrev=true
         }
-        console.log('gonna render pageeeee', req.app.locals.picsPerPage);
         res.render('newPaging',{files:files,searchPhrase:searchPhrase,
           pagenum: req.params.page, size: req.params.size, user: req.user })
       }
